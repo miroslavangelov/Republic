@@ -18,7 +18,7 @@ use Yii;
  * @property integer $cme_accr
  * @property integer $minutes
  * @property integer $created_by_id
- * @property integer updated_by_id
+ * @property integer $updated_by_id
  * @property string $subject
  * @property string $tags
  * @property string $status

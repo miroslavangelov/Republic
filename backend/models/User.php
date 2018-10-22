@@ -34,7 +34,6 @@ use Yii;
  * @property string $biologics
  * @property string $email_hash
  * @property string $domainsofinterest
- * @property string $acceptedcoeterms
  * @property date $last_logged_in
  * @property date $created_at
  * @property date $updated_at
@@ -88,7 +87,6 @@ class User extends ActiveRecord
                     'biologics',
                     'email_hash',
                     'domainsofinterest',
-                    'acceptedcoeterms',
                 ],
                 'string'
             ],

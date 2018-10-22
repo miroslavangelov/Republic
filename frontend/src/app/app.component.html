@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Republic_m!</title>
+  </head>
+  <body>
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h4>Republic_m!</h4>
+      </div>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <label class="col-lg-4 control-label">Webcast views</label>
+        <div class="col-lg-6 control-text">{{viewersCount}}</div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-4 control-label">Webcast unique viewers</label>
+        <div class="col-lg-6 control-text">{{uniqueViewersCount}}</div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-6 control-label">Top-5 webcast viewers that have watched the most number of sessions</label>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <th>#</th>
+              <th>User Id</th>
+              <th>Email</th>
+              <th>Session Views</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let topViewer of topViewers; let i = index;">
+                <td>{{i+1}}</td>
+                <td>{{topViewer.id}}</td>
+                <td>{{topViewer.email}}</td>
+                <td>{{topViewer.sessionViews}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-6 control-label">Browsers used to view webcasts</label>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <th>#</th>
+              <th>Browsers</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let browser of browsers;let i = index;">
+                <td>{{i+1}}</td>
+                <td>{{browser.http_user_agent}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-lg-6 control-label">Most popular sessions</label>
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+            <th>#</th>
+            <th>Session title</th>
+            <th>Views count</th>
+            </thead>
+            <tbody>
+            <tr *ngFor="let session of mostPopularSessions; let i = index;">
+              <td>{{i+1}}</td>
+              <td>{{session.title}}</td>
+              <td>{{session.sessionViews}}</td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

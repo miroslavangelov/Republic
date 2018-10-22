@@ -16,7 +16,11 @@ class SessionController extends ActiveController {
         
         unset($behaviors['authenticator']);
         unset($behaviors['rateLimiter']);
-        
+
+        $behaviors['corsFilter'] = [
+            'class' => \yii\filters\Cors::className(),
+        ];
+
         return $behaviors;
     }
     

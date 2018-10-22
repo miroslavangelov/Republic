@@ -13,10 +13,14 @@ class ViewerController extends ActiveController {
     public function behaviors()
     {
         $behaviors = parent::behaviors();
-        
+
         unset($behaviors['authenticator']);
         unset($behaviors['rateLimiter']);
-        
+
+        $behaviors['corsFilter'] = [
+            'class' => \yii\filters\Cors::className(),
+        ];
+
         return $behaviors;
     }
 
